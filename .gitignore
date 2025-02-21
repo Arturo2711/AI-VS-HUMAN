@@ -1,0 +1,22 @@
+test.py
+graphs_data.py
+./Model/Embeddings_train_and_test/X_train_emebeddings_big_data.pth
+./Model/Embeddings_train_and_test/X_test_emebeddings_big_data.pth
+./Model/Embeddings_train_and_test/X_train_emebeddings.pth
+./Model/Data
+./Model/Embeddings_train_and_test/X_test_emebeddings.pth
+./Application_web/Back_end/env/Lib/site-packages/pydantic_core/_pydantic_core.cp312-win_amd64.pyd
+./Model/Embeddings_train_and_test/y_train_big_data.pth
+# Ignorar archivos compilados de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignorar entornos virtuales
+env/
+venv/
+
+# Ignorar archivos de modelos entrenados (ajusta si es necesario)
+*.pth
+*.csv
+*.json

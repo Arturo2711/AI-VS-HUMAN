@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI vs HUMAN</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: linear-gradient(to right, #000000, #001f3f);
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+      .card {
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        padding: 3rem;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      }
+      h1 {
+        font-size: 2.5rem;
+        color: #00eaff;
+        text-shadow: 0 0 15px rgba(0, 234, 255, 1);
+      }
+      label,
+      button,
+      textarea {
+        font-size: 1.3rem;
+      }
+      .progress {
+        height: 30px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      /* Estilos fosforescentes mejorados */
+      .progress-bar.green-neon {
+        background: #00ff00;
+        box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+      }
+      .progress-bar.pink-neon {
+        background: #ff0099;
+        box-shadow: 0 0 20px #ff0099, 0 0 40px #ff0099;
+      }
+      .btn-primary {
+        background: #00eaff;
+        border: none;
+        box-shadow: 0 0 15px rgba(0, 234, 255, 1);
+        font-weight: bold;
+      }
+      .btn-primary:hover {
+        background: #008fb3;
+        box-shadow: 0 0 20px rgba(0, 234, 255, 1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-5">
+      <h1 class="text-center mb-4">Human vs Machine Generated Text</h1>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card shadow-sm">
+            <label for="inputText" class="form-label"
+              >Type the text you want to test</label
+            >
+            <textarea
+              id="inputText"
+              class="form-control"
+              rows="5"
+              placeholder="Type here..."
+            ></textarea>
+            <button id="button_send_text" class="btn btn-primary mt-4 w-100">
+              Submit
+            </button>
+          </div>
+
+          <p class="form-label mt-4">Human Generated:</p>
+          <div id="human_bar" class="progress mb-3">
+            <div
+              id="humanProbability"
+              class="progress-bar green-neon"
+              style="width: 50%"
+            >
+              40%
+            </div>
+          </div>
+
+          <p class="form-label">Machine Generated:</p>
+          <div id="machine_bar" class="progress">
+            <div
+              id="machineProbability"
+              class="progress-bar pink-neon"
+              style="width: 80%"
+            >
+              80%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="front.js"></script>
+  </body>
+</html>
