@@ -18,7 +18,7 @@ origins = [
     "http://localhost",
     "http://localhost:8080",
     "http://localhost:5050",
-    '"https://tusitio.netlify.app"'
+    'https://aihumantext.netlify.app'
 ]
 
 app.add_middleware(
