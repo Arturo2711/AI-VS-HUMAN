@@ -17,7 +17,8 @@ origins = [
     "https://localhost.tiangolo.com",
     "http://localhost",
     "http://localhost:8080",
-    "http://localhost:5050"
+    "http://localhost:5050",
+    '"https://tusitio.netlify.app"'
 ]
 
 app.add_middleware(
