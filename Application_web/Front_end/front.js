@@ -25,7 +25,10 @@ async function request_model() {
       body: JSON.stringify({ text: text_input }),
     };
 
-    const response = await fetch("https://aihumantext.netlify.app", options);
+    const response = await fetch(
+      "http://127.0.0.1:8000/request_model",
+      options
+    );
 
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);

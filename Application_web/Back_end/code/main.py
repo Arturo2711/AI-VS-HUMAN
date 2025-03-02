@@ -29,10 +29,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Endpoint GET
-@app.get("/name")
-async def get_name():
-    return {"name": "Arturo"}
 
 @app.post("/request_model")
 async def request_model(input_data: InputModel):
