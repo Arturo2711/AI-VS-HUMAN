@@ -1,4 +1,5 @@
 from transformers import AutoTokenizer, AutoModel
+from huggingface_hub import hf_hub_download
 import torch
 import torch.nn as nn
 
@@ -32,7 +33,7 @@ def get_embeddings(text):
     # Use autotokeniker, then generate embeddings 
     inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512)
     with torch.no_grad():
-        outputs = transformer(**inputs)  # Calcular los embeddings
+        outputs = transformer(**inputs)  # Compute embddings 
     embeddings = outputs.last_hidden_state.mean(dim=1)  # Promediar las representaciones
     return embeddings
 
@@ -51,5 +52,10 @@ def load_model():
 
     # Load the model architecture and weights
     model = MLPClassifier(input_dim, hidden_dim, output_dim)
-    model.load_state_dict(torch.load('code/modelo_entrenado_big_data.pth', map_location=torch.device('cpu'), weights_only=True))
+
+    ### Use hugging face to indicate the path
+    REPO_ID = 'Arturo2711/jim'
+    FILENAME = 'modelo_entrenado_big_data.pth'
+
+    model.load_state_dict(torch.load(hf_hub_download(repo_id=REPO_ID, filename=FILENAME), map_location=torch.device('cpu')))
     return model 
