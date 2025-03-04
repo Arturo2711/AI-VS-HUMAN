@@ -2,6 +2,7 @@ document
   .getElementById("button_send_text")
   .addEventListener("click", request_model);
 
+
 function updateBars(value1, value2) {
   const humanBar = document.getElementById("humanProbability");
   const machineBar = document.getElementById("machineProbability");
@@ -16,8 +17,16 @@ function updateBars(value1, value2) {
 }
 
 async function request_model() {
+  const submitText = document.getElementById("submitText");
+  const loadingSpinner = document.getElementById("loadingSpinner");
+
   try {
+    submitText.innerText = "Loading...";
+    loadingSpinner.classList.remove("d-none");
+
     const text_input = document.getElementById("inputText").value;
+
+
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -25,20 +34,27 @@ async function request_model() {
       body: JSON.stringify({ text: text_input }),
     };
 
+    
     const response = await fetch(
-      "http://127.0.0.1:8000/request_model",
+      "https://ai-vs-human-2.onrender.com/request_model",
       options
     );
 
+    
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
+
+    
     const response_json = await response.json();
-    /// Now, use probabilities to update probability bars
-    console.log(`human ${response_json.human}`);
-    console.log(`machine ${response_json.machine}`);
+
+    
     updateBars(100 * response_json.human, 100 * response_json.machine);
   } catch (error) {
-    console.error(error.message);
+    console.error("Error:", error.message);
+  } finally {
+
+    submitText.innerText = "Submit";
+    loadingSpinner.classList.add("d-none");
   }
 }

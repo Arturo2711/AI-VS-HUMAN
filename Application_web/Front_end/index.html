@@ -55,6 +55,17 @@
         background: #008fb3;
         box-shadow: 0 0 20px rgba(0, 234, 255, 1);
       }
+      /* Estilos para el spinner */
+      .btn-primary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .spinner-border {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
     </style>
   </head>
   <body>
@@ -73,7 +84,13 @@
               placeholder="Type here..."
             ></textarea>
             <button id="button_send_text" class="btn btn-primary mt-4 w-100">
-              Submit
+              <span id="submitText">Submit</span>
+              <span
+                id="loadingSpinner"
+                class="spinner-border spinner-border-sm d-none"
+                role="status"
+                aria-hidden="true"
+              ></span>
             </button>
           </div>
 
@@ -82,7 +99,7 @@
             <div
               id="humanProbability"
               class="progress-bar green-neon"
-              style="width: 50%"
+              style="width: 0%"
             >
               40%
             </div>
@@ -93,7 +110,7 @@
             <div
               id="machineProbability"
               class="progress-bar pink-neon"
-              style="width: 80%"
+              style="width: 0%"
             >
               80%
             </div>
