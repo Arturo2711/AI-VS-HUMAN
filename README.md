@@ -16,15 +16,15 @@ We utilize **DistilBERT**, a lightweight version of BERT, to generate contextual
 
 Each input text is converted into a sequence of token embeddings. To obtain a fixed-size vector representation, we compute the mean of all token embeddings:
 
-\[ \vec{Absolute} = \frac{1}{n} \sum\_{i=1}^{n} \alpha_i \]
+![](Images/absolute.png)
 
 where \(\alpha_i\) represents the contextual embedding of token \(i\).
 
 The dataset is then structured as ordered pairs:
 
-\[ Dataset = \{(\vec{Absolute_1}, L_1), (\vec{Absolute_2}, L_2), \dots, (\vec{Absolute_n}, L_n)\} \]
+![](Images/order_pair.png)
 
-where \( L \in \{0,1\} \) represents the binary label indicating whether the text is human-written (0) or AI-generated (1).
+where L represents the binary label indicating whether the text is human-written (0) or AI-generated (1).
 
 ### Model Architecture
 
