@@ -18,7 +18,7 @@ origins = [
     "http://localhost",
     "http://localhost:8080",
     "http://localhost:5050",
-    'https://aihumantext.netlify.app'
+    'https://aihumantext.netlify.app',
     'https://ai-vs-human-6qv7.onrender.com'
 ]
 
