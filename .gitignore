@@ -20,3 +20,5 @@ venv/
 *.pth
 *.csv
 *.json
+
+node_modules/
