@@ -18,7 +18,7 @@ Each input text is converted into a sequence of token embeddings. To obtain a fi
 
 ![](Images/absolute.png)
 
-where \(\alpha_i\) represents the contextual embedding of token \(i\).
+where alpha_i represents the contextual embedding of token i.
 
 The dataset is then structured as ordered pairs:
 
